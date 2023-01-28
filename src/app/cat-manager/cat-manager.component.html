@@ -1,0 +1,24 @@
+<h1>Katzen-Verwaltung</h1>
+
+<h2>Liste aller Katzen:</h2>
+
+<app-cat *ngFor="let cat of cats"
+[name]="cat.name"
+[age]="cat.age"
+(fed)="wasFed($event)">
+</app-cat>
+
+<h2>Registrierung</h2>
+
+<div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" #name/>
+</div>
+<div>
+    <label for="age">Alter: </label>
+    <input type="number" id="age" #age/>
+</div>
+<button (click)="registerCat(name.value, +age.value);">Registrieren</button>
+
+
+
